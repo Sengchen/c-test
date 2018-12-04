@@ -1,0 +1,4 @@
+﻿  new-spider c++.cpp
+c:\users\administrator\documents\visual studio 2015\projects\new-spider c++\new-spider c++\new-spider c++.cpp(31): warning C4101: “hProcess”: 未引用的局部变量
+  new-spider c++.vcxproj -> c:\users\administrator\documents\visual studio 2015\Projects\new-spider c++\Debug\new-spider c++.exe
+  new-spider c++.vcxproj -> c:\users\administrator\documents\visual studio 2015\Projects\new-spider c++\Debug\new-spider c++.pdb (Full PDB)
