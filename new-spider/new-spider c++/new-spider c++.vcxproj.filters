@@ -21,7 +21,10 @@
     <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="object.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="new-spider c++.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
