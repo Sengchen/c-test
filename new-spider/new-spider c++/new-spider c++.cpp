@@ -17,6 +17,8 @@
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 
+extern void address_object_test();
+
 using namespace std;
 using namespace rapidjson;
 
@@ -36,8 +38,6 @@ void processList()
 	pe.dwSize = sizeof(PROCESSENTRY32);
 
 	int k(num);
-
-	HANDLE hProcess;
 
 	BOOL has = Process32First(hSnapshot, &pe);
 	cout << has << endl;
@@ -91,9 +91,11 @@ void serialize()
 
 }
 
+extern void http();
+
 int main()
 {
-	json();
+	http();
 	system("pause");
     return 0;
 }
