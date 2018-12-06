@@ -10,6 +10,8 @@
 
 #include <fstream>
 
+using namespace std;
+
 void address_object_test_sub(std::string str)
 {
 	str = "test_sub_1";
@@ -25,7 +27,6 @@ void address_object_test()
 	std::string test("test");
 	std::string* pTest = &test;
 
-	using namespace std;
 	cout << test << endl;
 	cout << &test << endl;
 	cout << *pTest << endl;
@@ -40,11 +41,59 @@ void address_object_test()
 	std::cout << test << std::endl;*/
 }
 
+void address_point_object_test()
+{
+	/*int var = 20;
+	int *ip;
+	ip = &var;
+	std::cout << ip << ":" << *ip << std::endl;*/
+
+	const int LEN = 3;
+	/*int var[LEN] = { 10, 100, 1000 };
+	int *ptr;
+	ptr = var;
+	for (int i = 0; i < LEN; i++)
+	{
+		std::cout << ptr << std::endl;
+		std::cout << *ptr << std::endl;
+		ptr++;
+	}*/
+
+	/*int var[LEN] = { 10, 100, 1000 };
+	int *ptr[LEN];
+	for (int i = 0; i < LEN; i++)
+	{
+		ptr[i] = &var[i];
+		cout << ptr[i] << ":" << *ptr[i] << endl;
+	}*/
+
+	// ptr是数组首地址
+	// ptr[i]是指针值
+	// &ptr[i]是指针指向的地址
+	/*char* ptr[LEN] = { "chris", "test", "jones" };
+
+	cout << "数组地址:" << ptr << endl;
+
+	for (int i = 0; i < LEN; i++)
+	{
+		cout << "指针值:" << ptr[i] << endl;
+		cout << "指针指向地址:" << &ptr[i] << endl;
+	}*/
+
+	int a = 2;
+	int* b = &a;
+	cout << b << ":" << *b << endl;
+
+	char c = 't';
+	char* d = &c;
+	cout << d << ":" << *d << endl;
+}
+
 void http()
 {
 	using namespace std;
 
-	string host = "localhost";
+	string host = "www.baidu.com";
 
 	WSADATA wsaData;
 	if (WSAStartup(MAKEWORD(2, 2), &wsaData) == 0)
@@ -71,7 +120,6 @@ void http()
 		for (cur = res; cur != NULL; cur = cur->ai_next) {
 			addr = (struct sockaddr_in *)cur->ai_addr;
 		}
-		
 		
 		cout << "ip: " << inet_ntop(AF_INET, &addr->sin_addr, ipbuf, 16) << endl;
 
@@ -139,7 +187,6 @@ void http()
 				delete[] buff;
 				buff = new_buff;
 			}
-
 			cout << "*";
 		}
 		buff[len] = '\0';
@@ -148,10 +195,32 @@ void http()
 		ofstream ofs;
 		ofs.open("C:/Users/Administrator/Desktop/test.txt", iostream::in | iostream::out | iostream::binary);
 		ofs.write(buff, len);
+		cout << buff << endl;
 		ofs.close();
 	}
 	else {
 		cout << "初始化套接字失败" << endl;
 		return;
 	}
+}
+
+void file()
+{
+	using namespace std;
+	fstream file_stream;
+	file_stream.open("C:/Users/Administrator/Documents/QQ号码_2407474463.txt", iostream::in | iostream::out);
+	int len = 0;
+	
+	if (file_stream.is_open())
+	{
+		while (!file_stream.eof())
+		{
+			char buffer[1024];
+			file_stream.getline(buffer, sizeof(buffer));
+			cout << buffer << endl;
+		}
+	}
+	file_stream.clear();
+	file_stream.close();
+	return;
 }

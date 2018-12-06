@@ -17,8 +17,6 @@
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 
-extern void address_object_test();
-
 using namespace std;
 using namespace rapidjson;
 
@@ -86,16 +84,17 @@ void json()
 	}
 }
 
-void serialize() 
-{
-
-}
-
 extern void http();
+extern void file();
+extern void address_object_test();
+extern void address_point_object_test();
 
 int main()
 {
-	http();
+	// http();
+	// file();
+
+	address_point_object_test();
 	system("pause");
     return 0;
 }
