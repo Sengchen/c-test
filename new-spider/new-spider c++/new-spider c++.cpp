@@ -89,12 +89,16 @@ extern void file();
 extern void address_object_test();
 extern void address_point_object_test();
 
+extern void download();
+
 int main()
 {
 	// http();
 	// file();
 
-	address_point_object_test();
+	// address_point_object_test();
+
+	download();
 	system("pause");
     return 0;
 }

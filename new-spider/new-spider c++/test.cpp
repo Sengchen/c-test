@@ -1,4 +1,5 @@
-﻿#include "stdafx.h"
+﻿// standard application framework extensions
+#include "stdafx.h"
 
 #include <iostream>
 #include <string>
@@ -6,7 +7,10 @@
 #include <MSWSock.h>
 #include <WS2tcpip.h>
 
+#include <direct.h>
+
 #pragma  comment(lib,"ws2_32.lib") //套接字编程需要的库文件
+#pragma comment(lib,"URlmon")
 
 #include <fstream>
 
@@ -223,4 +227,12 @@ void file()
 	file_stream.clear();
 	file_stream.close();
 	return;
+}
+
+void download()
+{
+	char buffer[MAX_PATH];
+	_getcwd(buffer, MAX_PATH);
+	strcat_s(buffer, "/test.jpg");
+	HRESULT hResult = URLDownloadToFileA(NULL, "https://img-blog.csdn.net/20170118221744178?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXE3ODQ0Mjc2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center", buffer, 0, NULL);
 }
