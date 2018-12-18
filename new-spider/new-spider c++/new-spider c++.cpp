@@ -91,6 +91,8 @@ extern void address_point_object_test();
 
 extern void download();
 
+extern void gdi();
+
 int main()
 {
 	// http();
@@ -98,7 +100,8 @@ int main()
 
 	// address_point_object_test();
 
-	download();
+	// download();
+	gdi();
 	system("pause");
     return 0;
 }
